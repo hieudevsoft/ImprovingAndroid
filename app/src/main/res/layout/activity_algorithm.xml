@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AlgorithmActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="0dp"
+        android:fillViewport="true"
+        android:padding="16dp"
+        tools:listitem="@layout/item_person"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:itemCount="10"
+        app:spanCount="3"
+        android:orientation="vertical"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintHeight_percent=".8"
+        android:layout_height="0dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:text="Bubble sort"
+        app:elevation="10dp"
+        android:id="@+id/search"
+        android:paddingHorizontal="24dp"
+        app:layout_constraintEnd_toStartOf="@id/binary_search"
+        app:cornerRadius="20dp"
+        app:layout_constraintTop_toBottomOf="@id/rcView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.button.MaterialButton
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/search"
+        android:text="Quick sort"
+        app:elevation="10dp"
+        android:id="@+id/binary_search"
+        android:paddingHorizontal="24dp"
+        app:cornerRadius="20dp"
+        app:layout_constraintTop_toBottomOf="@id/rcView"
+        android:layout_width="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/search" android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edt_search"
+        android:textSize="20sp"
+        android:textColor="@color/purple_700"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@id/search"
+        app:layout_constraintTop_toBottomOf="@id/search"
+        app:layout_constraintStart_toStartOf="@id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
